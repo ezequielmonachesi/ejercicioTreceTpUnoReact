@@ -16,6 +16,7 @@ const AdministradorClima = () => {
         try{ const respuesta = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=7642ec8dbee5fee9e33dd46366f32720`)
         const informacion = await respuesta.json();
         setDatos(informacion);
+        console.log(informacion.main.humidity)
         } catch (error){
             console.log(error)
         }

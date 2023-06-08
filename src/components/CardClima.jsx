@@ -1,19 +1,18 @@
 import { Col, Row } from "react-bootstrap";
 
-const CardClima = () => {
+const CardClima = ({datos}) => {
     return (
         <>
         <Col md="8" lg="7" className="my-2">
-            <h6>Resultados para <b>Capital, Tucumán</b></h6>
+            <h6>Resultados para <b>{datos.name}</b></h6>
         </Col>
         <Col md="8" lg="6">
             <Row>
-                <Col xs="1" className="fs-3 fw-bold">17</Col>
+                <Col xs="1" className="fs-3 fw-bold">{datos.main.temp-273.15}</Col>
                 <Col xs="1">c°</Col>
                 <Col xs="7">
-                    <p className="text-secondary mb-1">Prob. de precipitaciones: 2%</p>
-                    <p className="text-secondary mb-1">Humedad: 91%</p>
-                    <p className="text-secondary mb-1">Viento: a 8 Km/h</p>
+                    <p className="text-secondary mb-1">Humedad: {datos.main.humidity}%</p>
+                    <p className="text-secondary mb-1">Viento: a {datos.wind.speed} Km/h</p>
                 </Col>
                 <Col xs="3">
                     <h6>Clima</h6>
