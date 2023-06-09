@@ -63,7 +63,10 @@ const AdministradorClima = () => {
       setDatos(await informacion);
       console.log(informacion.main.humidity);
     } catch (error) {
-      console.log(error);
+      confirm('No se pudo encontrar la ciudad, desea consultar de nuevo?')
+      if(confirm){
+        window.location.reload(true);
+      }
     }
   };
 
